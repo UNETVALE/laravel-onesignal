@@ -380,11 +380,6 @@ class OneSignalClient
             $parameters['app_id'] = $this->appId;
         }
 
-        // Make sure to use included_segments
-        if (empty($parameters['included_segments']) && empty($parameters['include_player_ids'])) {
-            $parameters['included_segments'] = ['All'];
-        }
-
         $parameters = array_merge($parameters, $this->additionalParams);
 
         $this->headers['body'] = json_encode($parameters);
